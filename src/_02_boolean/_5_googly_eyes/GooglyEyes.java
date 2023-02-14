@@ -39,7 +39,10 @@ import processing.core.PImage;
 public class GooglyEyes extends PApplet {
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
-    
+    int leftpupilx ;
+    int rightpupilx ;
+    int leftpupily ;
+    int rightpupily ;
     PImage face;
     
     @Override
@@ -49,12 +52,45 @@ public class GooglyEyes extends PApplet {
     
     @Override
     public void setup() {
-
+    	face = loadImage("cat.jpg");
+    	face.resize(WIDTH, HEIGHT);
     }
 
     @Override
     public void draw() {
-
+    	image(face,0,0);
+    	if(mouseX > 300) {
+    		leftpupilx = 300;
+    		rightpupilx = leftpupilx;
+    	}
+    	else if(mouseX < 150){
+    		leftpupilx = 150;
+    		leftpupilx = rightpupilx;
+    	}
+    	else {
+    		leftpupilx = mouseX;
+    		rightpupilx = leftpupilx;
+    	}
+    	if(mouseY> 350) {
+    		leftpupily = 350;
+    		rightpupily = leftpupily;
+    	}
+    	else if(mouseY < 150) {
+    		leftpupily = 150;
+    		rightpupily = leftpupily;
+    		
+    	}
+    	else {
+    		leftpupily = mouseY;
+    		rightpupily = leftpupily;
+    	}
+    	
+    	fill(255,255,255);
+    	ellipse(240,260,250,250);
+    	ellipse(550,260,250,250);
+    	fill(0,0,0);
+    	ellipse(leftpupilx,leftpupily,100,100);
+    	ellipse(rightpupilx+310,rightpupily,100,100);
     }
 
     static public void main(String[] args) {
