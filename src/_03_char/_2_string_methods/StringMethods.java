@@ -5,10 +5,10 @@ public class StringMethods {
 	public static void main(String[] args) {
 		
 		// 1. Create a String variable and initialize it to contain a minimum of 3 characters
-
+			String dog = "dog";
 		// 2. Print the 3rd char of your String to the console.
 		//    HINT: .charAt
-
+				System.out.println(dog.chartAt);
 		
 		// 3. Print the length of your String to the console.
 		//    HINT: .length()
